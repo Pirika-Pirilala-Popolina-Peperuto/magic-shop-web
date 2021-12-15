@@ -5,19 +5,8 @@
         class="container flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0"
       >
         <a class="relative flex items-center inline-block h-5 h-full font-black leading-none" href="/">
-          <svg
-            class="w-auto h-6 text-indigo-600 fill-current"
-            viewBox="0 0 194 116"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g fill-rule="evenodd">
-              <path
-                d="M96.869 0L30 116h104l-9.88-17.134H59.64l47.109-81.736zM0 116h19.831L77 17.135 67.088 0z"
-              />
-              <path d="M87 68.732l9.926 17.143 29.893-51.59L174.15 116H194L126.817 0z" />
-            </g>
-          </svg>
-          <span class="ml-3 text-xl text-gray-800">Landmark<span class="text-pink-500">.</span></span>
+          <img alt="" class="w-auto h-6 text-indigo-600 fill-current" src="https://i.imgur.com/MDYUATR.webp">
+          <span class="ml-3 text-xl text-gray-800">Peperuto Shop<span class="text-pink-500">.</span></span>
         </a>
 
         <nav
@@ -30,23 +19,22 @@
           >Home</a>
           <a
             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600"
-            href="#features"
-          >Features</a>
+            href="#magics"
+          >Magics</a>
           <a
             class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600"
-            href="#pricing"
-          >Pricing</a>
+            href="#discounts"
+          >Discounts</a>
           <a
             class="font-bold duration-100 transition-color hover:text-indigo-600"
-            href="#testimonials"
-          >Testimonials</a>
+            href="#search"
+          >Search</a>
           <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
             <a class="w-full py-2 font-bold text-center text-pink-500" href="#_">Login</a>
             <a
               class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-indigo-700 fold-bold"
               href="#_"
-            >Get
-              Started</a>
+            >Magic Bag</a>
           </div>
         </nav>
 
@@ -60,8 +48,7 @@
           <a
             class="relative z-40 inline-block w-auto h-full px-5 py-3 text-sm font-bold leading-none text-white transition-all transition duration-100 duration-300 bg-indigo-700 rounded shadow-md fold-bold lg:bg-white lg:text-indigo-700 sm:w-full lg:shadow-none hover:shadow-xl"
             href="#_"
-          >Get
-            Started</a>
+          >Magic Bag</a>
           <svg
             class="absolute top-0 left-0 hidden w-screen max-w-3xl -mt-64 -ml-12 lg:block"
             viewBox="0 0 818 815"
@@ -142,18 +129,18 @@
           class="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left"
         >
           <h1 class="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-6xl xl:mb-8">
-            Build the
-            Next
-            Great Thing
+            Pirika
+            Pirilala <br>
+            Popolina <br>
+            Peperuto
           </h1>
           <p class="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">
-            Are you ready to start your
-            adventure and start building the next greatest SAAS app on the market?
+            我が名はめぐみん、红魔族随一の魔法の使い手にして、爆裂魔法を操りし者、我が力、见るが良い！<b>Explosion</b>!
           </p>
           <a
-            href="#_"
             class="relative self-start inline-block w-auto px-8 py-4 mx-auto mt-0 text-base font-bold text-white bg-indigo-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold lg:mx-0"
-          >Signup
+            href="#_"
+          >Start Shop
             Today!</a>
           <!-- Integrates with section -->
           <div class="flex-col hidden mt-12 sm:flex lg:mt-24">
@@ -242,38 +229,38 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
             <defs>
-              <linearGradient id="linearGradient-1" x1="100%" y1="0%" x2="4.48%" y2="0%">
-                <stop stop-color="#5C54DB" offset="0%" />
-                <stop stop-color="#6A82E7" offset="100%" />
+              <linearGradient id="linearGradient-1" x1="100%" x2="4.48%" y1="0%" y2="0%">
+                <stop offset="0%" stop-color="#5C54DB" />
+                <stop offset="100%" stop-color="#6A82E7" />
               </linearGradient>
               <filter
                 id="filter-3"
+                filterUnits="objectBoundingBox"
+                height="118.7%"
+                width="118.7%"
                 x="-9.3%"
                 y="-6.7%"
-                width="118.7%"
-                height="118.7%"
-                filterUnits="objectBoundingBox"
               >
                 <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
-                <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowBlurOuter1" />
+                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8" />
+                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
               </filter>
               <rect
                 id="path-2"
-                x="63"
-                y="504"
-                width="300"
                 height="300"
                 rx="40"
+                width="300"
+                x="63"
+                y="504"
               />
             </defs>
             <g
               id="Page-1"
-              stroke="none"
-              stroke-width="1"
               fill="none"
               fill-rule="evenodd"
               opacity=".9"
+              stroke="none"
+              stroke-width="1"
             >
               <g id="Desktop-HD" transform="translate(-39 -531)">
                 <g id="Hero" transform="translate(43 83)">
@@ -286,11 +273,11 @@
             </g>
           </svg>
         </div>
-        <div class="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10">
-          <div class="container relative left-0 w-full max-w-4xl lg:absolute xl:max-w-6xl lg:w-screen">
+        <div class="rounded-3xl relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10">
+          <div class="rounded-3xl container relative left-0 w-full max-w-4xl lg:absolute xl:max-w-6xl lg:w-screen">
             <img
-              src="https://cdn.devdojo.com/images/september2020/macbook-mockup.png"
-              class="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12"
+              class="rounded-3xl w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12"
+              src="https://i.imgur.com/dgCOVGN.webp"
             >
           </div>
         </div>
@@ -333,27 +320,27 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
-                  <linearGradient id="linearGradient-1TriangleIcon1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop stop-color="#9C09DB" offset="0%" />
-                    <stop stop-color="#1C0FD7" offset="100%" />
+                  <linearGradient id="linearGradient-1TriangleIcon1" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#9C09DB" />
+                    <stop offset="100%" stop-color="#1C0FD7" />
                   </linearGradient>
                   <filter
                     id="filter-3TriangleIcon1"
+                    filterUnits="objectBoundingBox"
+                    height="128%"
+                    width="128%"
                     x="-14%"
                     y="-10%"
-                    width="128%"
-                    height="128%"
-                    filterUnits="objectBoundingBox"
                   >
                     <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
                     <feGaussianBlur
-                      stdDeviation="2"
                       in="shadowOffsetOuter1"
                       result="shadowBlurOuter1"
+                      stdDeviation="2"
                     />
                     <feColorMatrix
-                      values="0 0 0 0 0.141176471 0 0 0 0 0.031372549 0 0 0 0 0.501960784 0 0 0 0.15 0"
                       in="shadowBlurOuter1"
+                      values="0 0 0 0 0.141176471 0 0 0 0 0.031372549 0 0 0 0 0.501960784 0 0 0 0.15 0"
                     />
                   </filter>
                   <path
@@ -361,7 +348,7 @@
                     d="M17.947 0h14.106c6.24 0 8.503.65 10.785 1.87a12.721 12.721 0 015.292 5.292C49.35 9.444 50 11.707 50 17.947v14.106c0 6.24-.65 8.503-1.87 10.785a12.721 12.721 0 01-5.292 5.292C40.556 49.35 38.293 50 32.053 50H17.947c-6.24 0-8.503-.65-10.785-1.87a12.721 12.721 0 01-5.292-5.292C.65 40.556 0 38.293 0 32.053V17.947c0-6.24.65-8.503 1.87-10.785A12.721 12.721 0 017.162 1.87C9.444.65 11.707 0 17.947 0z"
                   />
                 </defs>
-                <g id="Page-1TriangleIcon1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Page-1TriangleIcon1" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                   <g id="Desktop-HDTriangleIcon1" transform="translate(-291 -1278)">
                     <g id="FeaturesTriangleIcon1" transform="translate(170 915)">
                       <g id="Group-9TriangleIcon1" transform="translate(0 365)">
@@ -379,9 +366,9 @@
                           </g>
                           <g
                             id="playTriangleIcon1"
-                            transform="translate(18 15)"
                             fill="#FFF"
                             fill-rule="nonzero"
+                            transform="translate(18 15)"
                           >
                             <path
                               id="TriangleIcon1"
@@ -403,7 +390,7 @@
                 top of the
                 line marketing tools.
               </p>
-              <a href="#_" class="relative flex mt-2 text-sm font-medium text-indigo-500 underline">Learn
+              <a class="relative flex mt-2 text-sm font-medium text-indigo-500 underline" href="#_">Learn
                 More</a>
             </div>
           </div>
@@ -431,27 +418,27 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
-                  <linearGradient id="linearGradient-1Icon2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop stop-color="#F2C314" offset="0%" />
-                    <stop stop-color="#FC3832" offset="100%" />
+                  <linearGradient id="linearGradient-1Icon2" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#F2C314" />
+                    <stop offset="100%" stop-color="#FC3832" />
                   </linearGradient>
                   <filter
                     id="filter-3Icon2"
+                    filterUnits="objectBoundingBox"
+                    height="128%"
+                    width="128%"
                     x="-14%"
                     y="-10%"
-                    width="128%"
-                    height="128%"
-                    filterUnits="objectBoundingBox"
                   >
                     <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
                     <feGaussianBlur
-                      stdDeviation="2"
                       in="shadowOffsetOuter1"
                       result="shadowBlurOuter1"
+                      stdDeviation="2"
                     />
                     <feColorMatrix
-                      values="0 0 0 0 0.501960784 0 0 0 0 0.125490196 0 0 0 0 0 0 0 0 0.15 0"
                       in="shadowBlurOuter1"
+                      values="0 0 0 0 0.501960784 0 0 0 0 0.125490196 0 0 0 0 0 0 0 0 0.15 0"
                     />
                   </filter>
                   <path
@@ -459,7 +446,7 @@
                     d="M17.947 0h14.106c6.24 0 8.503.65 10.785 1.87a12.721 12.721 0 015.292 5.292C49.35 9.444 50 11.707 50 17.947v14.106c0 6.24-.65 8.503-1.87 10.785a12.721 12.721 0 01-5.292 5.292C40.556 49.35 38.293 50 32.053 50H17.947c-6.24 0-8.503-.65-10.785-1.87a12.721 12.721 0 01-5.292-5.292C.65 40.556 0 38.293 0 32.053V17.947c0-6.24.65-8.503 1.87-10.785A12.721 12.721 0 017.162 1.87C9.444.65 11.707 0 17.947 0z"
                   />
                 </defs>
-                <g id="Page-1Icon2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Page-1Icon2" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                   <g id="Desktop-HDIcon2" transform="translate(-691 -1278)">
                     <g id="FeaturesIcon2" transform="translate(170 915)">
                       <g id="Group-9-CopyIcon2" transform="translate(400 365)">
@@ -474,9 +461,9 @@
                           </g>
                           <g
                             id="machine-learningIcon2"
-                            transform="translate(14 12)"
                             fill="#FFF"
                             fill-rule="nonzero"
+                            transform="translate(14 12)"
                           >
                             <path
                               id="ShapeIcon2"
@@ -497,7 +484,7 @@
                 to better
                 convert and sell.
               </p>
-              <a href="#_" class="relative flex mt-2 text-sm font-medium text-indigo-500 underline">Learn
+              <a class="relative flex mt-2 text-sm font-medium text-indigo-500 underline" href="#_">Learn
                 More</a>
             </div>
           </div>
@@ -525,27 +512,27 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
-                  <linearGradient id="linearGradient-1Icon3" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop stop-color="#32FBFC" offset="0%" />
-                    <stop stop-color="#3214F2" offset="100%" />
+                  <linearGradient id="linearGradient-1Icon3" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#32FBFC" />
+                    <stop offset="100%" stop-color="#3214F2" />
                   </linearGradient>
                   <filter
                     id="filter-3Icon3"
+                    filterUnits="objectBoundingBox"
+                    height="128%"
+                    width="128%"
                     x="-14%"
                     y="-10%"
-                    width="128%"
-                    height="128%"
-                    filterUnits="objectBoundingBox"
                   >
                     <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
                     <feGaussianBlur
-                      stdDeviation="2"
                       in="shadowOffsetOuter1"
                       result="shadowBlurOuter1"
+                      stdDeviation="2"
                     />
                     <feColorMatrix
-                      values="0 0 0 0 0.031372549 0 0 0 0 0.149019608 0 0 0 0 0.658823529 0 0 0 0.15 0"
                       in="shadowBlurOuter1"
+                      values="0 0 0 0 0.031372549 0 0 0 0 0.149019608 0 0 0 0 0.658823529 0 0 0 0.15 0"
                     />
                   </filter>
                   <path
@@ -553,7 +540,7 @@
                     d="M17.947 0h14.106c6.24 0 8.503.65 10.785 1.87a12.721 12.721 0 015.292 5.292C49.35 9.444 50 11.707 50 17.947v14.106c0 6.24-.65 8.503-1.87 10.785a12.721 12.721 0 01-5.292 5.292C40.556 49.35 38.293 50 32.053 50H17.947c-6.24 0-8.503-.65-10.785-1.87a12.721 12.721 0 01-5.292-5.292C.65 40.556 0 38.293 0 32.053V17.947c0-6.24.65-8.503 1.87-10.785A12.721 12.721 0 017.162 1.87C9.444.65 11.707 0 17.947 0z"
                   />
                 </defs>
-                <g id="Page-1Icon3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Page-1Icon3" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                   <g id="Desktop-HDIcon3" transform="translate(-1091 -1278)">
                     <g id="FeaturesIcon3" transform="translate(170 915)">
                       <g id="Group-9-Copy-2Icon3" transform="translate(800 365)">
@@ -568,9 +555,9 @@
                           </g>
                           <g
                             id="smart-notificationsIcon3"
-                            transform="translate(15 11)"
                             fill="#FFF"
                             fill-rule="nonzero"
+                            transform="translate(15 11)"
                           >
                             <path
                               id="IconIcon3"
@@ -591,7 +578,7 @@
                 you when
                 users convert.
               </p>
-              <a href="#_" class="relative flex mt-2 text-sm font-medium text-indigo-500 underline">Learn
+              <a class="relative flex mt-2 text-sm font-medium text-indigo-500 underline" href="#_">Learn
                 More</a>
             </div>
           </div>
@@ -644,12 +631,12 @@
                       <div class="p-2 text-green-500 rounded-full fill-current ">
                         <svg
                           class="w-6 h-6 align-middle"
-                          viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
                         >
                           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                           <polyline points="22 4 12 14.01 9 11.01" />
@@ -661,12 +648,12 @@
                       <div class="p-2 text-green-500 rounded-full fill-current ">
                         <svg
                           class="w-6 h-6 align-middle"
-                          viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
                         >
                           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                           <polyline points="22 4 12 14.01 9 11.01" />
@@ -678,12 +665,12 @@
                       <div class="p-2 text-green-500 rounded-full fill-current ">
                         <svg
                           class="w-6 h-6 align-middle"
-                          viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
                         >
                           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                           <polyline points="22 4 12 14.01 9 11.01" />
@@ -695,8 +682,8 @@
                 </div>
                 <div class="flex items-center block p-8 uppercase">
                   <a
-                    href="#_"
                     class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600"
+                    href="#_"
                   >Select
                     This Plan</a>
                 </div>
@@ -734,12 +721,12 @@
                     <div class="p-2 text-green-500 rounded-full fill-current">
                       <svg
                         class="w-6 h-6 align-middle"
-                        viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
                       >
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
@@ -751,12 +738,12 @@
                     <div class="p-2 text-green-500 rounded-full fill-current ">
                       <svg
                         class="w-6 h-6 align-middle"
-                        viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
                       >
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
@@ -768,12 +755,12 @@
                     <div class="p-2 text-green-500 rounded-full fill-current ">
                       <svg
                         class="w-6 h-6 align-middle"
-                        viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
                       >
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
@@ -786,8 +773,8 @@
 
               <div class="flex items-center block p-8 uppercase">
                 <a
-                  href="#_"
                   class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-indigo-600"
+                  href="#_"
                 >Select
                   This Plan</a>
               </div>
@@ -822,12 +809,12 @@
                       <div class="p-2 text-green-500 rounded-full fill-current ">
                         <svg
                           class="w-6 h-6 align-middle"
-                          viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
                         >
                           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                           <polyline points="22 4 12 14.01 9 11.01" />
@@ -839,12 +826,12 @@
                       <div class="p-2 text-green-500 rounded-full fill-current ">
                         <svg
                           class="w-6 h-6 align-middle"
-                          viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
                         >
                           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                           <polyline points="22 4 12 14.01 9 11.01" />
@@ -856,12 +843,12 @@
                       <div class="p-2 text-green-500 rounded-full fill-current ">
                         <svg
                           class="w-6 h-6 align-middle"
-                          viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
                         >
                           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                           <polyline points="22 4 12 14.01 9 11.01" />
@@ -874,8 +861,8 @@
 
                 <div class="flex items-center block p-8 uppercase">
                   <a
-                    href="#_"
                     class="block w-full px-6 py-4 mt-3 text-lg font-semibold text-center text-white bg-gray-900 rounded shadow-sm hover:bg-green-600"
+                    href="#_"
                   >Select
                     This Plan</a>
                 </div>
@@ -919,8 +906,8 @@
                   <div class="relative pl-12">
                     <svg
                       class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 100 125"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"
@@ -940,9 +927,9 @@
                   <p class="mt-1 text-sm leading-5 text-gray-500 truncate" />
                 </div>
                 <img
+                  alt=""
                   class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                   src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2694&q=80"
-                  alt=""
                 >
               </blockquote>
               <blockquote
@@ -952,8 +939,8 @@
                   <div class="relative pl-12">
                     <svg
                       class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 100 125"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"
@@ -973,9 +960,9 @@
                   <p class="mt-1 text-sm leading-5 text-gray-500 truncate" />
                 </div>
                 <img
+                  alt=""
                   class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                   src="https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80"
-                  alt=""
                 >
               </blockquote>
             </div>
@@ -987,8 +974,8 @@
                   <div class="relative pl-12">
                     <svg
                       class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 100 125"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"
@@ -1007,9 +994,9 @@
                   <p class="mt-1 text-sm leading-5 text-gray-500 truncate" />
                 </div>
                 <img
+                  alt=""
                   class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                   src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1700&q=80"
-                  alt=""
                 >
               </blockquote>
               <blockquote
@@ -1019,8 +1006,8 @@
                   <div class="relative pl-12">
                     <svg
                       class="absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 100 125"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"
@@ -1041,9 +1028,9 @@
                   <p class="mt-1 text-sm leading-5 text-gray-500 truncate" />
                 </div>
                 <img
+                  alt=""
                   class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80"
-                  alt=""
                 >
               </blockquote>
             </div>
@@ -1057,8 +1044,8 @@
       <div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
         <div class="w-full pl-12 mr-4 text-left lg:w-1/4 sm:text-center sm:pl-0 lg:text-left">
           <a
-            href="/"
             class="flex justify-start block text-left sm:text-center lg:text-left sm:justify-center lg:justify-start"
+            href="/"
           >
             <span class="flex items-start sm:items-center">
               <svg
@@ -1086,26 +1073,26 @@
             </li>
             <li>
               <a
-                href="#_"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="#_"
               >Features</a>
             </li>
             <li>
               <a
-                href="#_"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="#_"
               >Integrations</a>
             </li>
             <li>
               <a
-                href="#_"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="#_"
               >Pricing</a>
             </li>
             <li>
               <a
-                href="#_"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="#_"
               >FAQ</a>
             </li>
           </ul>
@@ -1115,12 +1102,12 @@
             </li>
             <li>
               <a
-                href="#_"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="#_"
               >Privacy</a>
             </li>
             <li>
-              <a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Terms
+              <a class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600" href="#_">Terms
                 of
                 Service</a>
             </li>
@@ -1131,22 +1118,22 @@
             </li>
             <li>
               <a
-                href="https://devdojo.com/tailwindcss/components"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="https://devdojo.com/tailwindcss/components"
               >Tailwind
                 Components</a>
             </li>
             <li>
               <a
-                href="https://devdojo.com/tailwindcss/templates"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="https://devdojo.com/tailwindcss/templates"
               >Tailwind
                 Templates</a>
             </li>
             <li>
               <a
-                href="https://devdojo.com/tails"
                 class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600"
+                href="https://devdojo.com/tails"
               >Tails</a>
             </li>
           </ul>
@@ -1157,11 +1144,11 @@
             <div class="flex justify-start pl-4 mt-2">
               <a
                 class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                target="_blank"
-                rel="noopener noreferrer"
                 href="https://devdojo.com"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"
                   />
@@ -1169,11 +1156,11 @@
               </a>
               <a
                 class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
-                target="_blank"
-                rel="noopener noreferrer"
                 href="https://devdojo.com"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"
                   />
@@ -1181,11 +1168,11 @@
               </a>
               <a
                 class="flex items-center block text-gray-400 no-underline hover:text-gray-600"
-                target="_blank"
-                rel="noopener noreferrer"
                 href="https://devdojo.com"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
                   />
@@ -1196,7 +1183,7 @@
         </div>
       </div>
       <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">
-        © 2020 Landmark. All rights
+        © 2021 Peperuto Shop. All rights
         reserved.
       </div>
 
