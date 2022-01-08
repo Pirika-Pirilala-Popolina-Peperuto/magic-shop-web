@@ -1,4 +1,5 @@
-import { defineNuxtConfig } from 'nuxt3'
+import {resolve} from 'pathe'
+import {defineNuxtConfig} from 'nuxt3'
 
 export default defineNuxtConfig({
   meta: {
@@ -8,6 +9,14 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
+  ],
+  alias: {
+    'images': resolve(__dirname, './assets/images'),
+    'styles': resolve(__dirname, './styles'),
+  },
+  css: [
+    '@unocss/reset/normalize.css',
+    '@/styles/main.scss'
   ],
   unocss: {
     uno: true,
