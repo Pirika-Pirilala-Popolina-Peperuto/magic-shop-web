@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   buildModules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
-    '@pinia/nuxt',
+    '@pinia/nuxt'
   ],
   alias: {
     'images': resolve(__dirname, './assets/images'),

@@ -14,7 +14,8 @@
             {{ bigTitle }}
           </h1>
           <p class="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">
-            {{ mainDescription }}<b>{{ explosion }}</b>
+            {{ mainDescription }}<b>{{ explosion }}</b><br/>
+            - <b text-rose-500>{{ whatIsThisWebSite }}</b>
           </p>
           <NuxtLink
               :to="startShopPath"
@@ -796,6 +797,7 @@
 const bigTitle = 'Pirika Pirilala Popolina Peperuto'
 const mainDescription = '我が名はめぐみん、红魔族随一の魔法の使い手にして、爆裂魔法を操りし者、我が力、见るが良い！'
 const explosion = 'Explosion!'
+const whatIsThisWebSite = 'A Magic Shop.'
 const mainButtonText = 'Start Shop Today!'
 
 const startShopPath = '/magics'
