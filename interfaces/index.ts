@@ -1,13 +1,7 @@
-export interface ProductImage {
-  altText: string
-  originalSrc: string
-}
-
-export interface CartItem {
-  variantId: number
-  productImage: ProductImage
-  productTitle: string
-  variantTitle: string
-  variantQuantity: number
-  variantPrice: number
+export interface Magic {
+  id: string
+  title: string
+  description: string
+  price: number
+  imageUrl: string
 }

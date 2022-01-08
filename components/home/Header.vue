@@ -71,16 +71,16 @@ const navBarItems: Array<{ name: string, link: string }> = [
   },
   {
     name: 'Discounts',
-    link: '/discounts'
+    link: ''
   },
   {
     name: 'Search',
-    link: '/search'
+    link: ''
   }
 ]
 
-const loginPath = '/login'
-const magicBagPath = '/bag'
+const loginPath = ''
+const magicBagPath = ''
 
 const isMDScreen = useMediaQuery('(min-width: 768px)')
 const isNavOpened = useState<boolean>('isNavOpened', () => false)
