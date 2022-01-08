@@ -1,5 +1,5 @@
 <template>
-  <div>123123123123</div>
+  <MagicsHeader/>
 </template>
 
 <script lang="ts" setup>

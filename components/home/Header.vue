@@ -1,5 +1,5 @@
 <template>
-  <header class="relative z-50 w-full h-24">
+  <header w-full h-24 bg-white top-0 sticky z-50>
     <div
         class="container flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0"
     >
@@ -11,7 +11,7 @@
       <nav
           v-show="isMDScreen || isNavOpened"
           id="nav"
-          class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative"
+          class="absolute top-0 left-0 z-10 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative"
       >
         <NuxtLink v-for="(item, i) in navBarItems" :key="item.name + i +Date.now()"
                   :to="item.link"

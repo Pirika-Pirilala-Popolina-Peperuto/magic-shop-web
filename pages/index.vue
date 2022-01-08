@@ -1,11 +1,11 @@
 <template>
-  <div class="overflow-x-hidden antialiased">
+  <div class="overflow-x-hidden antialiased h-screen">
     <HomeHeader/>
 
     <!-- BEGIN HERO SECTION -->
     <div class="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
       <div
-          class="container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0"
+          class="container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row 2xl:px-0"
       >
         <div
             class="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left"
@@ -23,7 +23,7 @@
           >{{ mainButtonText }}
           </NuxtLink>
         </div>
-        <div class="rounded-3xl relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10">
+        <div class="rounded-3xl relative z-10 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10">
           <div class="rounded-3xl container relative left-0 w-full max-w-4xl lg:absolute xl:max-w-6xl lg:w-screen">
             <img
                 class="rounded-3xl w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full"
@@ -36,7 +36,7 @@
     <!-- HERO SECTION END -->
 
     <!-- BEGIN FEATURES SECTION -->
-    <div id="features" class="relative w-full px-8 py-10 border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
+    <div id="features" class="relative w-full px-8 py-10 border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 2xl:px-0">
       <div class="container flex flex-col items-center justify-between h-full max-w-6xl mx-auto">
         <h2 class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">
           Our Features
