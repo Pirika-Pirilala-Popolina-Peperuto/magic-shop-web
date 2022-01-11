@@ -5,7 +5,12 @@ export interface Magic {
   name: string
   description: string
   price: number
-  pictureUrl: string
-  pictureId: string
+  picture_id: string
+  pictureUrl?: string
   quantity: number
+}
+
+export interface Picture {
+  id: string
+  picture_url: string
 }
