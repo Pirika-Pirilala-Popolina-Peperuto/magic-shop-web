@@ -1,5 +1,5 @@
 <template>
   <main>
-    <NuxtPage/>
+    <router-view />
   </main>
 </template>

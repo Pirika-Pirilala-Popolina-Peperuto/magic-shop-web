@@ -1,6 +1,6 @@
 <template>
   {{ currency }}
-  <span :class='numSizeClassNames'>{{ num }}</span>
+  <span :class="numSizeClassNames">{{ num }}</span>
 </template>
 
 <script lang="ts" setup>
