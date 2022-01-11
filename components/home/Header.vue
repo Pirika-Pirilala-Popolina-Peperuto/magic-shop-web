@@ -79,7 +79,7 @@ const navBarItems: Array<{ name: string, link: string }> = [
   }
 ]
 
-const loginPath = ''
+const loginPath = '/login'
 const magicBagPath = ''
 
 const isMDScreen = useMediaQuery('(min-width: 768px)')

@@ -2,14 +2,14 @@
   <div class="lg:flex">
     <div class="lg:w-1/2 xl:max-w-screen-sm">
       <div class="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
-        <div class="cursor-pointer flex items-center">
+        <NuxtLink to="/" class="cursor-pointer flex items-center">
           <div>
 
             <img alt="" class="w-auto h-6 text-indigo-600 fill-current" src="https://i.imgur.com/MDYUATR.webp">
 
           </div>
           <div class="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold">{{ headerTitle }}</div>
-        </div>
+        </NuxtLink>
       </div>
       <div class="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
         <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
