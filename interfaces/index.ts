@@ -1,7 +1,11 @@
+export type QueryResult<T> = T | null
+
 export interface Magic {
   id: string
-  title: string
+  name: string
   description: string
   price: number
-  imageUrl: string
+  pictureUrl: string
+  pictureId: string
+  quantity: number
 }
