@@ -21,6 +21,7 @@
         >
           {{ item.name }}
         </router-link>
+        <a target="_blank" :href="!(isLogin) ? 'http://localhost:3000/user/b6b60fbf-82be-44fc-9099-b72e9e26c812' : 'http://localhost:3000/user/' + reportUserId" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Customer report</a>
 
         <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
           <router-link v-if="!isLogin" :to="loginPath" class="w-full py-2 font-bold text-center text-pink-500">
@@ -108,6 +109,7 @@ const isNavOpened = ref<boolean>(false)
 
 const isLogin = !!localStorage.getItem('user')
 const userName = isLogin ? (JSON.parse(localStorage.getItem('user')!) as unknown as User).name : null
+const reportUserId = isLogin ? (JSON.parse(localStorage.getItem('user')!) as unknown as User).id : null
 
 const logout = () => {
   localStorage.removeItem('user')
