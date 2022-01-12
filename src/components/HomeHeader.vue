@@ -23,9 +23,15 @@
         </router-link>
 
         <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
-          <router-link :to="loginPath" class="w-full py-2 font-bold text-center text-pink-500">
+          <router-link v-if="!isLogin" :to="loginPath" class="w-full py-2 font-bold text-center text-pink-500">
             Login
           </router-link>
+          <div v-else class="whitespace-nowrap w-full py-2 font-bold text-center text-pink-500">
+            {{ userName }}
+          </div>
+          <button v-if="isLogin" class="whitespace-nowrap w-full py-2 font-bold text-center" @click.prevent="logout">
+            Logout
+          </button>
           <router-link
             :to="magicBagPath"
             class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-indigo-700 fold-bold"
@@ -39,11 +45,18 @@
         class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between"
       >
         <router-link
+          v-if="!isLogin"
           :to="loginPath"
           class="relative z-40 px-3 py-2 mr-0 text-sm font-bold text-pink-500 md:px-5 sm:mr-3 md:mt-0"
         >
           Login
         </router-link>
+        <div v-else class="whitespace-nowrap relative z-40 px-3 py-2 mr-0 text-sm font-bold text-pink-500 md:px-5 sm:mr-3 md:mt-0">
+          {{ userName }}
+        </div>
+        <button v-if="isLogin" class="whitespace-nowrap relative z-40 px-3 py-2 mr-0 text-sm font-bold md:px-5 sm:mr-3 md:mt-0" @click.prevent="logout">
+          Logout
+        </button>
         <router-link
           :to="magicBagPath"
           class="relative z-40 inline-block w-auto h-full px-5 py-3 text-sm font-bold leading-none text-white transition-all transition duration-100 duration-300 bg-indigo-700 rounded shadow-md fold-bold lg:bg-white lg:text-indigo-700 sm:w-full lg:shadow-none hover:shadow-xl"
@@ -65,6 +78,7 @@
 
 <script lang="ts" setup>
 import { useMediaQuery } from '@vueuse/core'
+import type { User } from '~/interfaces'
 
 const headerTitle = 'Peperuto Shop'
 const navBarItems: Array<{ name: string; link: string }> = [
@@ -91,4 +105,12 @@ const magicBagPath = '/bag'
 
 const isMDScreen = useMediaQuery('(min-width: 768px)')
 const isNavOpened = ref<boolean>(false)
+
+const isLogin = !!localStorage.getItem('user')
+const userName = isLogin ? (JSON.parse(localStorage.getItem('user')!) as unknown as User).name : null
+
+const logout = () => {
+  localStorage.removeItem('user')
+  location.reload()
+}
 </script>

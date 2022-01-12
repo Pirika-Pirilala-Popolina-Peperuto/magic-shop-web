@@ -1,5 +1,5 @@
 import query from '~/api/query'
-import type { Magic, Picture } from '~/interfaces'
+import type { Magic, Picture, User } from '~/interfaces'
 
 const getMagicsQueryStatement = 'SELECT * FROM products'
 export const getMagics = async(): Promise<Array<Magic>> => {
@@ -11,6 +11,12 @@ const getAllPicturesQueryStatement = 'SELECT * FROM pictures'
 export const getPictures = async(): Promise<Array<Picture>> => {
   const data = await query<Array<Picture>>(getAllPicturesQueryStatement)
   return data as Picture[]
+}
+
+const getAllUsersQueryStatement = 'SELECT * FROM users'
+export const getAllUsers = async(): Promise<Array<User>> => {
+  const data = await query<Array<User>>(getAllUsersQueryStatement)
+  return data as User[]
 }
 
 export const getSpecificMagic = async(magicId: string): Promise<Magic> => {

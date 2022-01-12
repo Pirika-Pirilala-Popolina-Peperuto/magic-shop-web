@@ -14,3 +14,17 @@ export interface Picture {
   id: string
   picture_url: string
 }
+
+export enum UserType {
+  customer = 'customer',
+  admin = 'admin',
+}
+
+export interface User {
+  address: string
+  email: string
+  id: string
+  name: string
+  password: string
+  user_type: UserType
+}

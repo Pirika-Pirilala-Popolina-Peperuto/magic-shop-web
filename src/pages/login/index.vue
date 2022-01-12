@@ -2,7 +2,7 @@
   <div class="lg:flex">
     <div class="lg:w-1/2 xl:max-w-screen-sm">
       <div class="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
-        <router-link to="/" class="cursor-pointer flex items-center">
+        <router-link class="cursor-pointer flex items-center" to="/">
           <div>
             <img alt="" class="w-auto h-6 text-indigo-600 fill-current" src="https://i.imgur.com/MDYUATR.webp">
           </div>
@@ -19,45 +19,38 @@
           Log in
         </h2>
         <div class="mt-12">
-          <form>
-            <div>
+          <div>
+            <div class="text-sm font-bold text-gray-700 tracking-wide">
+              Email Address
+            </div>
+            <input
+              v-model="email"
+              class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+              placeholder="yourmail@example.com" type="email"
+            >
+          </div>
+          <div class="mt-8">
+            <div class="flex justify-between items-center">
               <div class="text-sm font-bold text-gray-700 tracking-wide">
-                Email Address
+                Password
               </div>
-              <input
-                class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                placeholder="mike@gmail.com" type=""
-              >
             </div>
-            <div class="mt-8">
-              <div class="flex justify-between items-center">
-                <div class="text-sm font-bold text-gray-700 tracking-wide">
-                  Password
-                </div>
-                <div>
-                  <a
-                    class="text-xs font-display font-semibold text-indigo-600 hover:text-indigo-800
-                                        cursor-pointer"
-                  >
-                    Forgot Password?
-                  </a>
-                </div>
-              </div>
-              <input
-                class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                placeholder="Enter your password" type=""
-              >
-            </div>
-            <div class="mt-10">
-              <button
-                class="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide
+            <input
+              v-model="password"
+              class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+              placeholder="Enter your password" type="password"
+            >
+          </div>
+          <div class="mt-10">
+            <button
+              class="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
                                 shadow-lg"
-              >
-                Log In
-              </button>
-            </div>
-          </form>
+              @click.prevent="login"
+            >
+              Log In
+            </button>
+          </div>
           <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
             Don't have an account ? <a class="cursor-pointer text-indigo-600 hover:text-indigo-800">Sign up</a>
           </div>
@@ -163,7 +156,28 @@
 </template>
 
 <script lang="ts" setup>
+import { useStorage } from '@vueuse/core'
+import { getAllUsers } from '~/api'
+
+const isLogin = !!localStorage.getItem('user')
+if (isLogin) location.replace('/')
+
 const headerTitle = 'Peperuto Shop'
+const email = ref<string>('')
+const password = ref<string>('')
+
+const login = async() => {
+  const allUsers = await getAllUsers()
+  const success = allUsers.find(lib => lib.email === email.value.trim() && lib.password)
+  // eslint-disable-next-line no-alert
+  if (!success) {
+    alert('login failed!')
+  }
+  else {
+    useStorage('user', success)
+    location.replace('/')
+  }
+}
 </script>
 
 <style lang="scss">
