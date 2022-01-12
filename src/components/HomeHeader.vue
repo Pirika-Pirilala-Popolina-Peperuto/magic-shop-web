@@ -87,7 +87,7 @@ const navBarItems: Array<{ name: string; link: string }> = [
 ]
 
 const loginPath = '/login'
-const magicBagPath = ''
+const magicBagPath = '/bag'
 
 const isMDScreen = useMediaQuery('(min-width: 768px)')
 const isNavOpened = ref<boolean>(false)
