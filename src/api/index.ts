@@ -27,3 +27,9 @@ export const getSpecificMagic = async(magicId: string): Promise<Magic> => {
   magic!.pictureUrl = picture?.picture_url
   return magic as Magic
 }
+
+export const addNewUser = async(name: string, address: string, email: string, password: string): Promise<boolean> => {
+  const createUserMutationStatement = `INSERT INTO users(name, email, address, password) VALUES('${name}', '${email}', '${address}', '${password}')`
+  await query(createUserMutationStatement)
+  return true
+}
