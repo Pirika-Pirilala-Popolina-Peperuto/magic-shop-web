@@ -2,7 +2,7 @@ import type { AxiosError } from 'axios'
 import axios from 'axios'
 import type { QueryResult } from '~/interfaces'
 
-const baseURL = 'http://220.135.101.179'
+const baseURL = import.meta.env.PROD ? 'http://localhost' : 'http://220.135.101.179'
 
 export default async function query<T>(sql?: string): Promise<QueryResult<T>> {
   try {
