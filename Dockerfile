@@ -10,7 +10,7 @@ WORKDIR /app
 COPY ["package.json", "pnpm-lock.yaml", "./"]
 
 # install project dependencies
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install
 
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
