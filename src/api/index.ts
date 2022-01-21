@@ -1,6 +1,9 @@
 import query from '~/api/query'
 import type { Magic, Picture, User } from '~/interfaces'
 
+// WARNING: DO NOT DO THESE OPERATIONS IN FRONT-END!
+// There are just for fast-speed development, which is not an acceptable choice!
+
 const getMagicsQueryStatement = 'SELECT * FROM products'
 export const getMagics = async(): Promise<Array<Magic>> => {
   const data = await query<Array<Magic>>(getMagicsQueryStatement)

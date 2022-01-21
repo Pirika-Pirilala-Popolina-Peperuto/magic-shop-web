@@ -39,7 +39,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useStorage } from '@vueuse/core'
+import { get, useStorage } from '@vueuse/core'
 import swal from 'sweetalert'
 import { getAllUsers } from '~/api'
 import { useIsLogin } from '~/composables/checkLoggedin'
@@ -51,7 +51,7 @@ const email = ref<string>('')
 const password = ref<string>('')
 
 const login = async() => {
-  if (!(email.value.trim().length) || !(password.value.length)) {
+  if (!(get(email).trim().length) || !(get(password).length)) {
     await swal({
       title: '😡😡😡😡😡😡😡',
       text: 'Please give more data!',
@@ -61,7 +61,7 @@ const login = async() => {
   }
 
   const allUsers = await getAllUsers()
-  const success = allUsers.find(lib => lib.email === email.value.trim() && lib.password === password.value)
+  const success = allUsers.find(lib => lib.email === get(email).trim() && lib.password === get(password))
   // eslint-disable-next-line no-alert
   if (!success) {
     await swal({

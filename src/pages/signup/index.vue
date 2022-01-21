@@ -83,6 +83,7 @@
 </template>
 
 <script lang="ts" setup>
+import {get} from '@vueuse/core'
 import swal from 'sweetalert'
 import { addNewUser, getAllUsers } from '~/api'
 import { useIsLogin } from '~/composables/checkLoggedin'
@@ -97,7 +98,10 @@ const password = ref<string>('')
 const password2 = ref<string>('')
 
 const signup = async() => {
-  if (!(name.value.trim().length) || !(email.value.trim().length) || !(address.value.trim().length) || !(password.value.length)) {
+  if (!(get(name).trim().length)
+      || !(get(email).trim().length)
+      || !(get(address).trim().length)
+      || !(get(password).length)) {
     await swal({
       title: '😡😡😡😡😡😡😡',
       text: 'Please give more data!',
@@ -106,7 +110,7 @@ const signup = async() => {
     return
   }
 
-  if (password.value !== password2.value) {
+  if (get(password) !== get(password2)) {
     password.value = ''
     password2.value = ''
     await swal({
@@ -118,7 +122,7 @@ const signup = async() => {
   }
 
   const allUsers = await getAllUsers()
-  const found = allUsers.find(lib => lib.email === email.value.trim())
+  const found = allUsers.find(lib => lib.email === get(email).trim())
   // eslint-disable-next-line no-alert
   if (found) {
     await swal({
@@ -128,7 +132,7 @@ const signup = async() => {
     })
   }
   else {
-    await addNewUser(name.value, address.value, email.value, password2.value)
+    await addNewUser(get(name), get(address), get(email), get(password2))
     await swal({
       title: 'Done.',
       text: 'Successfully created an account!!',

@@ -70,10 +70,11 @@
 </template>
 
 <script lang="ts" setup>
-import { tryOnMounted } from '@vueuse/core'
+import { get, tryOnMounted } from '@vueuse/core'
 import { useRoute } from 'vue-router'
 import { getSpecificMagic } from '~/api'
 import { getTotalPrice } from '~/calculateTotalPrice'
+import { useCheckHasSessionStorageItem, useLoadFromSessionStorage } from '~/composables/storage'
 import type { Magic } from '~/interfaces'
 
 const route = useRoute()
@@ -81,9 +82,25 @@ const magicId = route.path?.replace('/magics/', '')
 
 const magic = ref<Magic>({} as Magic)
 const amount = ref<number>(1)
-const totalPrice = computed(() => getTotalPrice(magic.value.price, amount.value))
+const totalPrice = computed(() => getTotalPrice(get(magic).price, get(amount)))
+
+const getMagicById = (magics: Array<Magic>, id: string): Magic => {
+  // DO NOT DO THIS IF YOU WANT TO HAVE A BETTER CODE.
+  const magic = magics.find(magic => magic.id === id)
+  if (!magic) location.replace('/magics')
+  return magic!
+}
 
 tryOnMounted(async() => {
-  magic.value = await getSpecificMagic(magicId)
+  const magicStorageKey = 'magics'
+  const hasSavedMagics = useCheckHasSessionStorageItem(magicStorageKey)
+
+  if (!hasSavedMagics) {
+    magic.value = await getSpecificMagic(magicId)
+    return
+  }
+
+  const magics = get(useLoadFromSessionStorage<Array<Magic>>(magicStorageKey)) ?? []
+  magic.value = getMagicById(magics, magicId)
 })
 </script>
