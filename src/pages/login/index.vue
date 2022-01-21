@@ -40,6 +40,7 @@
 
 <script lang="ts" setup>
 import { useStorage } from '@vueuse/core'
+import swal from 'sweetalert'
 import { getAllUsers } from '~/api'
 
 const isLogin = !!localStorage.getItem('user')
@@ -50,7 +51,11 @@ const password = ref<string>('')
 
 const login = async() => {
   if (!(email.value.trim().length) || !(password.value.length)) {
-    alert('Please give more data!')
+    await swal({
+      title: '😡😡😡😡😡😡😡',
+      text: 'Please give more data!',
+      icon: 'error',
+    })
     return
   }
 
@@ -58,7 +63,11 @@ const login = async() => {
   const success = allUsers.find(lib => lib.email === email.value.trim() && lib.password === password.value)
   // eslint-disable-next-line no-alert
   if (!success) {
-    alert('login failed!')
+    await swal({
+      title: '🥺🥺🥺🥺🥺🥺🥺',
+      text: 'login failed!',
+      icon: 'warning',
+    })
   }
   else {
     useStorage('user', success)

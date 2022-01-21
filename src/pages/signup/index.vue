@@ -2,41 +2,73 @@
   <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
       <div>
-        <img class="mx-auto h-12 w-auto" src="https://i.imgur.com/MDYUATR.webp" alt="Workflow">
+        <img alt="Workflow" class="mx-auto h-12 w-auto" src="https://i.imgur.com/MDYUATR.webp">
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Sign in to your account
         </h2>
       </div>
       <div class="mt-8 space-y-6">
-        <input type="hidden" name="remember" value="true">
+        <input name="remember" type="hidden" value="true">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
-            <label for="name" class="sr-only">Name</label>
-            <input id="name" v-model="name" name="name" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Your Name">
+            <label class="sr-only" for="name">Name</label>
+            <input
+              id="name" v-model="name" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="name" placeholder="Your Name"
+              required
+              type="text"
+            >
           </div>
           <div>
-            <label for="address" class="sr-only">Address</label>
-            <input id="address" v-model="address" name="address" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Address">
+            <label class="sr-only" for="address">Address</label>
+            <input
+              id="address" v-model="address" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="address" placeholder="Address"
+              required
+              type="text"
+            >
           </div>
           <div>
-            <label for="email-address" class="sr-only">Email address</label>
-            <input id="email-address" v-model="email" name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+            <label class="sr-only" for="email-address">Email address</label>
+            <input
+              id="email-address" v-model="email" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="email" placeholder="Email address"
+              required
+              type="email"
+            >
           </div>
           <div>
-            <label for="password" class="sr-only">Password</label>
-            <input id="password" v-model="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+            <label class="sr-only" for="password">Password</label>
+            <input
+              id="password" v-model="password" autocomplete="current-password" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="password"
+              placeholder="Password"
+              required
+              type="password"
+            >
           </div>
           <div>
-            <label for="password2" class="sr-only">Password confirm</label>
-            <input id="password2" v-model="password2" name="password2" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Confirm Password">
+            <label class="sr-only" for="password2">Password confirm</label>
+            <input
+              id="password2" v-model="password2" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" name="password2" placeholder="Confirm Password"
+              required
+              type="password"
+            >
           </div>
         </div>
 
         <div>
-          <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" @click.prevent="signup">
+          <button
+            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            type="submit"
+            @click.prevent="signup"
+          >
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-              <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+              <svg
+                aria-hidden="true" class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                  fill-rule="evenodd"
+                />
               </svg>
             </span>
             Sign up
@@ -51,7 +83,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useStorage } from '@vueuse/core'
+import swal from 'sweetalert'
 import { addNewUser, getAllUsers } from '~/api'
 
 const isLogin = !!localStorage.getItem('user')
@@ -65,24 +97,42 @@ const password2 = ref<string>('')
 
 const signup = async() => {
   if (!(name.value.trim().length) || !(email.value.trim().length) || !(address.value.trim().length) || !(password.value.length)) {
-    alert('Please give more data!')
+    await swal({
+      title: '😡😡😡😡😡😡😡',
+      text: 'Please give more data!',
+      icon: 'error',
+    })
     return
   }
 
   if (password.value !== password2.value) {
     password.value = ''
     password2.value = ''
-    alert('password not match!')
+    await swal({
+      title: '🥺🥺🥺🥺🥺🥺🥺',
+      text: 'password not match!',
+      icon: 'warning',
+    })
     return
   }
 
   const allUsers = await getAllUsers()
   const found = allUsers.find(lib => lib.email === email.value.trim())
   // eslint-disable-next-line no-alert
-  if (found) { alert('account already exist!') }
-
+  if (found) {
+    await swal({
+      title: 'Oh No!',
+      text: 'account already exist!',
+      icon: 'warning',
+    })
+  }
   else {
     await addNewUser(name.value, address.value, email.value, password2.value)
+    await swal({
+      title: 'Done.',
+      text: 'Successfully created an account!!',
+      icon: 'success',
+    })
     location.replace('/login')
   }
 }
