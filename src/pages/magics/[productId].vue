@@ -71,7 +71,7 @@ import { get, tryOnMounted } from '@vueuse/core'
 import swal from 'sweetalert'
 import { useRoute, useRouter } from 'vue-router'
 import { getSpecificMagic } from '~/api'
-import { discountAmount, getTotalPrice } from '~/calculateTotalPrice'
+import { discountAmount, getTotalPrice } from '~/utils/calculateTotalPrice'
 import { useCheckHasSessionStorageItem, useLoadFromSessionStorage } from '~/composables/storage'
 import type { Magic } from '~/interfaces'
 

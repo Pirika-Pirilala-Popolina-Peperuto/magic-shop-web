@@ -43,6 +43,7 @@ import { get, useStorage } from '@vueuse/core'
 import swal from 'sweetalert'
 import { getUser } from '~/api'
 import { useIsLogin } from '~/composables/checkLoggedin'
+import { isValidEmail } from '~/utils/email'
 
 const isLogin = useIsLogin()
 if (isLogin) location.replace('/')
@@ -56,6 +57,15 @@ const login = async() => {
       title: '😡😡😡😡😡😡😡',
       text: 'Please give more data!',
       icon: 'error',
+    })
+    return
+  }
+
+  if (!isValidEmail(get(email))) {
+    await swal({
+      title: '🥺🥺🥺🥺🥺🥺🥺',
+      text: 'Not an email!',
+      icon: 'warning',
     })
     return
   }

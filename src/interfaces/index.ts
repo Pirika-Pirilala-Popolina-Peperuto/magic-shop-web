@@ -3,11 +3,11 @@ export type QueryResult<T> = T | null
 export interface Magic {
   id: string
   name: string
-  description: string
+  description?: string
   price: number
   picture_id: string
   pictureUrl?: string
-  quantity: number
+  quantity?: number
 }
 
 export interface Picture {
