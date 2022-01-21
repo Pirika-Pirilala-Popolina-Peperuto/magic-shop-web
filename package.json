@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "vite --port 3333 --open",
+    "dev": "vite --port 3333",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext=.ts,.vue"
+    "lint": "eslint . --ext=.ts,.vue --fix"
   },
   "dependencies": {
     "@vueuse/core": "^7.5.4",

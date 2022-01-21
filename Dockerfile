@@ -1,23 +1,25 @@
-FROM node:lts
+FROM node:alpine
 
-# install simple http server for serving static content
-RUN npm install -g http-server
-RUN curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
+ARG WORKPLACE=/app
+ARG PORT=80
 
-# make the 'app' folder the current working directory
-WORKDIR /app
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
-# copy both 'package.json' and 'package-lock.json' (if available)
-COPY ["package.json", "pnpm-lock.yaml", "./"]
+COPY ./ $WORKPLACE
 
-# install project dependencies
-RUN pnpm install
+WORKDIR $WORKPLACE
 
-# copy project files and folders to the current working directory (i.e. 'app' folder)
-COPY . .
+RUN npm i -g pnpm && \
+    pnpm i -g serve &&  \
+    pnpm i --frozen-lockfile &&  \
+    pnpm build
 
-# build app for production with minification
-RUN pnpm build
+RUN mkdir ../to_rm && \
+    mv ./* ../to_rm && \
+    mv ../to_rm/dist ./ && \
+    rm -rf ../to_rm
 
-EXPOSE 80
-CMD [ "http-server", "dist" ]
+ENV NODE_ENV=production
+ENV PORT=$PORT
+EXPOSE $PORT
+CMD ["serve", "-s", "dist", "-C"]

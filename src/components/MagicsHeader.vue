@@ -23,11 +23,6 @@
               fill="currentColor"
             />
           </svg>
-          <div
-            class="absolute top-0 right-0 text-xs bg-yellow-300 text-gray-900 font-semibold rounded-full py-1 px-2 transform translate-x-4 -translate-y-4"
-          >
-            1
-          </div>
         </router-link>
       </div>
     </div>
