@@ -14,9 +14,9 @@
           <hr class="my-3">
           <p>{{ magic.description }}</p>
           <div class="mt-2">
-            <label class="text-gray-700 text-sm">Count:</label>
+            <label class="text-gray-700 text-sm">Count: {{ amount >= discountAmount ? '(打折囉!)' : '' }}</label>
             <div class="flex items-center mt-1">
-              <button class="text-gray-500 focus:outline-none focus:text-gray-600" @click.prevent="amount++">
+              <button class="text-gray-500 focus:outline-none focus:text-gray-600" @click.prevent="increaseAmount">
                 <svg
                   class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                   stroke-width="2" viewBox="0 0 24 24"
@@ -41,9 +41,16 @@
 
           <div class="flex items-center mt-6">
             <button
-              class="px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500"
+              :disabled="isSoldOut"
+              class="px-8 py-2 text-white text-sm font-medium rounded"
+              :class="{
+                'bg-indigo-600': !isSoldOut,
+                'bg-gray-300': isSoldOut,
+                'hover:bg-indigo-500': !isSoldOut
+              }"
+              @click.prevent.stop="addToBag"
             >
-              Buy
+              {{ isSoldOut ? '(賣完)' : 'Buy' }}
             </button>
             <router-link class="mx-4" to="/magics">
               <button
@@ -52,16 +59,6 @@
                 Back
               </button>
             </router-link>
-            <button class="mx-2 text-gray-600 border rounded-md p-2 hover:bg-gray-200 focus:outline-none">
-              <svg
-                class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" viewBox="0 0 24 24"
-              >
-                <path
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-            </button>
           </div>
         </div>
       </div>
@@ -71,24 +68,46 @@
 
 <script lang="ts" setup>
 import { get, tryOnMounted } from '@vueuse/core'
-import { useRoute } from 'vue-router'
+import swal from 'sweetalert'
+import { useRoute, useRouter } from 'vue-router'
 import { getSpecificMagic } from '~/api'
-import { getTotalPrice } from '~/calculateTotalPrice'
+import { discountAmount, getTotalPrice } from '~/calculateTotalPrice'
 import { useCheckHasSessionStorageItem, useLoadFromSessionStorage } from '~/composables/storage'
 import type { Magic } from '~/interfaces'
 
 const route = useRoute()
+const router = useRouter()
 const magicId = route.path?.replace('/magics/', '')
 
 const magic = ref<Magic>({} as Magic)
 const amount = ref<number>(1)
 const totalPrice = computed(() => getTotalPrice(get(magic).price, get(amount)))
+const isSoldOut = computed(() => magic.value.quantity === 0)
 
-const getMagicById = (magics: Array<Magic>, id: string): Magic => {
+const increaseAmount = () => {
+  const quantity = get(magic).quantity
+  if (get(amount) + 1 > quantity) return
+  amount.value++
+}
+
+const getMagicById = async(magics: Array<Magic>, id: string): Promise<Magic> => {
   // DO NOT DO THIS IF YOU WANT TO HAVE A BETTER CODE.
   const magic = magics.find(magic => magic.id === id)
-  if (!magic) location.replace('/magics')
+  if (!magic) {
+    await swal({ title: '魔法消失了！' })
+    await router.replace('/magics')
+  }
   return magic!
+}
+
+const addToBag = async() => {
+  if (get(isSoldOut)) return
+
+  await swal({
+    title: 'Magic !!',
+    text: '魔法已放入背包！',
+    icon: 'success',
+  })
 }
 
 tryOnMounted(async() => {
@@ -101,6 +120,6 @@ tryOnMounted(async() => {
   }
 
   const magics = get(useLoadFromSessionStorage<Array<Magic>>(magicStorageKey)) ?? []
-  magic.value = getMagicById(magics, magicId)
+  magic.value = await getMagicById(magics, magicId)
 })
 </script>

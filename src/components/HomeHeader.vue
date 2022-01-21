@@ -94,10 +94,6 @@ const navBarItems: Array<{ name: string; link: string }> = [
     link: '/magics',
   },
   {
-    name: 'Discounts',
-    link: '',
-  },
-  {
     name: 'Search',
     link: '',
   },

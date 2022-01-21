@@ -83,9 +83,9 @@
 </template>
 
 <script lang="ts" setup>
-import {get} from '@vueuse/core'
+import { get } from '@vueuse/core'
 import swal from 'sweetalert'
-import { addNewUser, getAllUsers } from '~/api'
+import { addNewUser, isUserExist } from '~/api'
 import { useIsLogin } from '~/composables/checkLoggedin'
 
 const isLogin = useIsLogin()
@@ -121,10 +121,9 @@ const signup = async() => {
     return
   }
 
-  const allUsers = await getAllUsers()
-  const found = allUsers.find(lib => lib.email === get(email).trim())
+  const exist = await isUserExist(get(email))
   // eslint-disable-next-line no-alert
-  if (found) {
+  if (exist) {
     await swal({
       title: 'Oh No!',
       text: 'account already exist!',

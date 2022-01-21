@@ -41,7 +41,7 @@
 <script lang="ts" setup>
 import { get, useStorage } from '@vueuse/core'
 import swal from 'sweetalert'
-import { getAllUsers } from '~/api'
+import { getUser } from '~/api'
 import { useIsLogin } from '~/composables/checkLoggedin'
 
 const isLogin = useIsLogin()
@@ -60,8 +60,8 @@ const login = async() => {
     return
   }
 
-  const allUsers = await getAllUsers()
-  const success = allUsers.find(lib => lib.email === get(email).trim() && lib.password === get(password))
+  const user = await getUser(get(email).trim(), get(password))
+  const success = !!user
   // eslint-disable-next-line no-alert
   if (!success) {
     await swal({
@@ -71,7 +71,7 @@ const login = async() => {
     })
   }
   else {
-    useStorage('user', success)
+    useStorage('user', user)
     location.replace('/')
   }
 }

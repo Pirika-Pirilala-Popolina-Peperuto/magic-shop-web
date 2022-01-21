@@ -16,10 +16,24 @@ export const getPictures = async(): Promise<Array<Picture>> => {
   return data as Picture[]
 }
 
-const getAllUsersQueryStatement = 'SELECT * FROM users'
-export const getAllUsers = async(): Promise<Array<User>> => {
-  const data = await query<Array<User>>(getAllUsersQueryStatement)
-  return data as User[]
+export const getUser = async(email: string, p: string): Promise<User | null> => {
+  // DO NOT THINK THERE is NO ANY SQL injection !
+  const simpleSqlIDetector = /[\t\r\n]|(--[^\r\n]*)|(\/\*[\w\W]*?(?=\*)\*\/)/gi
+  const hasSimpleSqlI = simpleSqlIDetector.test(email) || simpleSqlIDetector.test(p)
+  if (hasSimpleSqlI) return null
+  const getUserQueryStatement = `SELECT id, name, email, address FROM users WHERE email = '${email}' AND password = '${p}'`
+  const data = (await query<Array<User>>(getUserQueryStatement))![0]
+  return data && ((data.email === email) ? data : null)
+}
+
+export const isUserExist = async(email: string): Promise<boolean> => {
+  // DO NOT THINK THERE is NO ANY SQL injection !
+  const simpleSqlIDetector = /[\t\r\n]|(--[^\r\n]*)|(\/\*[\w\W]*?(?=\*)\*\/)/gi
+  const hasSimpleSqlI = simpleSqlIDetector.test(email)
+  if (hasSimpleSqlI) return true // if error, always return true.
+  const hasUserQueryStatement = `SELECT EXISTS(SELECT email from users WHERE email = '${email}')`
+  const data = (await query<Array<{ exists: boolean }>>(hasUserQueryStatement))![0]
+  return data?.exists ?? true // if error, always return true.
 }
 
 export const getSpecificMagic = async(magicId: string): Promise<Magic> => {
