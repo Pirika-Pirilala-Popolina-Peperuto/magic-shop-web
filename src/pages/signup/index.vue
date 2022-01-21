@@ -85,8 +85,9 @@
 <script lang="ts" setup>
 import swal from 'sweetalert'
 import { addNewUser, getAllUsers } from '~/api'
+import { useIsLogin } from '~/composables/checkLoggedin'
 
-const isLogin = !!localStorage.getItem('user')
+const isLogin = useIsLogin()
 if (isLogin) location.replace('/')
 
 const name = ref<string>('')

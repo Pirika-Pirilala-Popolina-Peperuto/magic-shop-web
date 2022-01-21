@@ -42,8 +42,9 @@
 import { useStorage } from '@vueuse/core'
 import swal from 'sweetalert'
 import { getAllUsers } from '~/api'
+import { useIsLogin } from '~/composables/checkLoggedin'
 
-const isLogin = !!localStorage.getItem('user')
+const isLogin = useIsLogin()
 if (isLogin) location.replace('/')
 
 const email = ref<string>('')
