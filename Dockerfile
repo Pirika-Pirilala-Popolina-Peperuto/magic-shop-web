@@ -1,4 +1,4 @@
-FROM node:lts-lpine
+FROM node:lts-alpine
 
 # install simple http server for serving static content
 RUN npm install -g http-server
@@ -16,7 +16,7 @@ RUN pnpm install --frozen-lockfile --prod
 COPY . .
 
 # build app for production with minification
-RUN pnpm run build
+RUN pnpm build
 
 EXPOSE 80
 CMD [ "http-server", "dist" ]
