@@ -67,12 +67,12 @@
 </template>
 
 <script lang="ts" setup>
-import { get, tryOnMounted } from '@vueuse/core'
+import { get, tryOnMounted, useStorage } from '@vueuse/core'
 import swal from 'sweetalert'
 import { useRoute, useRouter } from 'vue-router'
 import { getSpecificMagic } from '~/api'
 import { discountAmount, getTotalPrice } from '~/utils/calculateTotalPrice'
-import { useCheckHasSessionStorageItem, useLoadFromSessionStorage } from '~/composables/storage'
+import { useCheckHasSessionStorageItem, useLoadFromLocalStorage, useLoadFromSessionStorage } from '~/composables/storage'
 import type { Magic } from '~/interfaces'
 
 const route = useRoute()
@@ -102,6 +102,23 @@ const getMagicById = async(magics: Array<Magic>, id: string): Promise<Magic> => 
 
 const addToBag = async() => {
   if (get(isSoldOut)) return
+
+  const bagKey = 'bag'
+  const bag = get(useLoadFromLocalStorage<Array<Magic>>(bagKey)) ?? []
+  localStorage.removeItem(bagKey)
+
+  const _magic = get<Magic>(magic)
+  _magic.quantity = get(amount)
+
+  const itemIndex = bag.findIndex(item => item.id === _magic.id)
+
+  if (itemIndex < 0)
+    bag.push(_magic)
+
+  else
+    bag[itemIndex].quantity += _magic.quantity
+
+  useStorage(bagKey, bag)
 
   await swal({
     title: 'Magic !!',

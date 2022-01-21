@@ -7,7 +7,7 @@ export interface Magic {
   price: number
   picture_id: string
   pictureUrl?: string
-  quantity?: number
+  quantity: number
 }
 
 export interface Picture {
