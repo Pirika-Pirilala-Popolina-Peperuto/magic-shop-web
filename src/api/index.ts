@@ -1,5 +1,7 @@
+import internal from 'stream'
 import query from '~/api/query'
 import type { Magic, Picture, User } from '~/interfaces'
+import { v4 as uuidv4 } from 'uuid';
 
 // WARNING: DO NOT DO THESE OPERATIONS IN FRONT-END!
 // There are just for fast-speed development, which is not an acceptable choice!
@@ -50,3 +52,21 @@ export const addNewUser = async(name: string, address: string, email: string, pa
   await query(createUserMutationStatement)
   return true
 }
+
+export const addNewOrder = async(customer_id: string, created_at: string, process_status: string, remark: string, quantitly : number,
+  product_id : string): Promise<boolean> => {
+
+  for(var i = 1; i <= quantitly; i++){
+    const orders_id = uuidv4();
+    const createOrder = `INSERT INTO orders(id,customer_id,created_at,process_status,remark) 
+    VALUES ('${orders_id}', '${customer_id}', '${created_at}', '${process_status}', '${remark}')`
+    await query(createOrder)
+
+    const createProductOrder = `INSERT INTO order_products(order_id,product_id) 
+    VALUES('${orders_id}', '${product_id}')    
+    `
+    await query(createProductOrder)
+  }
+  return true
+}
+

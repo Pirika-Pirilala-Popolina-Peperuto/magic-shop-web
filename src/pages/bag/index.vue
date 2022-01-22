@@ -77,7 +77,9 @@
                 </div>
               </div>
               <a href="#">
-                <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-gray-800 rounded-full shadow item-center hover:bg-gray-700 focus:shadow-outline focus:outline-none">
+                <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-gray-800 rounded-full shadow item-center hover:bg-gray-700 focus:shadow-outline focus:outline-none"
+                @click.prevent="submitOrder()"
+                >
                   <svg aria-hidden="true" data-prefix="far" data-icon="credit-card" class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M527.9 32H48.1C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48.1 48h479.8c26.6 0 48.1-21.5 48.1-48V80c0-26.5-21.5-48-48.1-48zM54.1 80h467.8c3.3 0 6 2.7 6 6v42H48.1V86c0-3.3 2.7-6 6-6zm467.8 352H54.1c-3.3 0-6-2.7-6-6V256h479.8v170c0 3.3-2.7 6-6 6zM192 332v40c0 6.6-5.4 12-12 12h-72c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12zm192 0v40c0 6.6-5.4 12-12 12H236c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12z" /></svg>
                   <span class="ml-2 mt-5px">Create an order</span>
                 </button>
@@ -95,15 +97,23 @@ import { get, useDebounceFn, useStorage } from '@vueuse/core'
 import { useLoadFromLocalStorage } from '~/composables/storage'
 import type { Magic } from '~/interfaces'
 import { getTotalPrice } from '~/utils/calculateTotalPrice'
+import { v4 as uuidv4 } from 'uuid';
+import { addNewOrder } from '~/api'
+import type { User } from '~/interfaces'
 
 const bagKey = 'bag'
 const emptyBagMsg = 'No Magic here!'
 const startShopPath = '/magics'
 
 const bag = useLoadFromLocalStorage<Array<Magic>>(bagKey)
+const user = useLoadFromLocalStorage<User>('user')
 
 const totalPrice = computed(() => {
   const _bag = get(bag)
+  console.log(_bag);
+  console.log(uuidv4());
+  //console.log(bag.id);
+
   if (!_bag) return 0
   let _total = 0
   for (const item of _bag) _total += getTotalPrice(item.price, item.quantity)
@@ -143,6 +153,20 @@ const changeItemQuantity = useDebounceFn((e: Event, item: Magic) => {
   if (newQuantity === 0)
     updateBagItem(item, true)
 }, 500)
+
+const submitOrder = () => {
+  const _bag = Object.assign([],bag?.value);
+  const userId = get(user)?.id
+  //const Datea = Date(Date.now());
+  console.log(user); 
+  //console.log(Datea); 
+
+  // for (const item of _bag){
+  //   await addNewOrder(userId, Date.Now());
+  // } 
+
+}
+
 </script>
 
 <style lang="scss" scoped>
