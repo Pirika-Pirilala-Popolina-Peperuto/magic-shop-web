@@ -100,6 +100,7 @@ import { getTotalPrice } from '~/utils/calculateTotalPrice'
 import { v4 as uuidv4 } from 'uuid';
 import { addNewOrder } from '~/api'
 import type { User } from '~/interfaces'
+import swal from 'sweetalert'
 
 const bagKey = 'bag'
 const emptyBagMsg = 'No Magic here!'
@@ -154,17 +155,18 @@ const changeItemQuantity = useDebounceFn((e: Event, item: Magic) => {
     updateBagItem(item, true)
 }, 500)
 
-const submitOrder = () => {
+const submitOrder = async () => {
   const _bag = Object.assign([],bag?.value);
-  const userId = get(user)?.id
-  //const Datea = Date(Date.now());
-  console.log(user); 
-  //console.log(Datea); 
-
-  // for (const item of _bag){
-  //   await addNewOrder(userId, Date.Now());
-  // } 
-
+  const userId = JSON.parse(localStorage.getItem("user"))?.id
+  const date = new Date().toISOString().substr(0,10).replaceAll('-','/');
+  for (const item of _bag){
+    await addNewOrder(userId, date, "處理中", "大家加油，同組一心", item.quantity, item.id);
+  } 
+  await swal({
+      title: '謝謝你這個盤子',
+      text: '你的訂單我收到了，但我不會發給你',
+      icon: 'success',
+    })
 }
 
 </script>

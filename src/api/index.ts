@@ -60,6 +60,8 @@ export const addNewOrder = async(customer_id: string, created_at: string, proces
     const orders_id = uuidv4();
     const createOrder = `INSERT INTO orders(id,customer_id,created_at,process_status,remark) 
     VALUES ('${orders_id}', '${customer_id}', '${created_at}', '${process_status}', '${remark}')`
+    console.log(createOrder)
+
     await query(createOrder)
 
     const createProductOrder = `INSERT INTO order_products(order_id,product_id) 

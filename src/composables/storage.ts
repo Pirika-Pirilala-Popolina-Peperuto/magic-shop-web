@@ -11,6 +11,7 @@ import { ref } from 'vue'
  */
 const loadFromStorage = <T>(storage: Storage, key: string): Ref<UnwrapRef<T>> | null => {
   const item = storage.getItem(key)
+  console.log(key, item);
   return item ? ref<T>(JSON.parse(item) as unknown as T) : null
 }
 
