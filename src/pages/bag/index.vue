@@ -28,7 +28,9 @@
           <tbody>
             <tr v-for="(item, i) in bag" :key="i">
               <td class="hidden pb-4 md:table-cell">
-                <img :src="item.pictureUrl" class="w-20 rounded" alt="Thumbnail">
+                <router-link :to="`${startShopPath}/${item.id}`">
+                  <img :src="item.pictureUrl" class="w-20 rounded" alt="Thumbnail">
+                </router-link>
               </td>
               <td>
                 <p class="mb-2 md:ml-4">
@@ -96,6 +98,7 @@ import { getTotalPrice } from '~/utils/calculateTotalPrice'
 
 const bagKey = 'bag'
 const emptyBagMsg = 'No Magic here!'
+const startShopPath = '/magics'
 
 const bag = useLoadFromLocalStorage<Array<Magic>>(bagKey)
 

@@ -108,15 +108,35 @@ const addToBag = async() => {
   localStorage.removeItem(bagKey)
 
   const _magic = get<Magic>(magic)
-  _magic.quantity = get(amount)
-
   const itemIndex = bag.findIndex(item => item.id === _magic.id)
 
-  if (itemIndex < 0)
-    bag.push(_magic)
+  _magic.maxQuantity = _magic.quantity
+  const _amountToAdd = get(amount)
 
-  else
-    bag[itemIndex].quantity += _magic.quantity
+  const whenAmountExceed = async() => {
+    const tooManyErrorMsg = '你的包包已經有很多這個魔法了，再買就要超出庫存啦！'
+    await swal({ title: tooManyErrorMsg })
+    useStorage(bagKey, bag)
+  }
+
+  if (_amountToAdd > _magic.maxQuantity) {
+    await whenAmountExceed()
+    return
+  }
+
+  _magic.quantity = _amountToAdd
+
+  if (itemIndex < 0) { bag.push(_magic) }
+  else {
+    const originQuantity = bag[itemIndex].quantity
+    const newQuantity = originQuantity + _amountToAdd
+    if (newQuantity > _magic.maxQuantity) {
+      await whenAmountExceed()
+      return
+    }
+
+    bag[itemIndex].quantity = newQuantity
+  }
 
   useStorage(bagKey, bag)
 

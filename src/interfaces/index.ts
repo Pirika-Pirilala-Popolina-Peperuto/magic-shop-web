@@ -8,6 +8,7 @@ export interface Magic {
   picture_id: string
   pictureUrl?: string
   quantity: number
+  maxQuantity?: number
 }
 
 export interface Picture {
