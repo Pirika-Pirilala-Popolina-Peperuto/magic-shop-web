@@ -100,7 +100,6 @@ import { getTotalPrice } from '~/utils/calculateTotalPrice'
 import { v4 as uuidv4 } from 'uuid';
 import { addNewOrder } from '~/api'
 import type { User } from '~/interfaces'
-import swal from 'sweetalert'
 
 const bagKey = 'bag'
 const emptyBagMsg = 'No Magic here!'
